@@ -1,0 +1,216 @@
+<!-- <mat-toolbar color="primary">
+    <span class="logo">TipTech Shop</span>
+    <div class="spacer">
+      
+    </div>
+    <button mat-button routerLink="/products">Produits</button>
+
+      <div *ngIf="isAuthenticated()" style="display: block;justify-content: space-between;">
+
+        <button *ngIf="isAuthenticated() && role === 'ROLE_USER'" mat-icon-button routerLink="cart">
+          <mat-icon *ngIf="isAuthenticated()" aria-hidden="false" [matBadge]="cartItemsCount" [matBadgeHidden]="!cartItemsCount" matBadgeColor="warn" matBadgePosition="after"  >shopping_cart</mat-icon>
+        </button>
+
+
+        <button *ngIf="role === 'ROLE_USER'" mat-flat-button [matMenuTriggerFor]="userMenu">
+          <span *ngIf="fullName">{{ fullName }}</span>
+          <mat-icon>person</mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item [routerLink]="['./my-orders']">Mes commandes</button>
+          <button mat-menu-item [routerLink]="['./my-infos']" >Mes informations</button>
+          <button mat-menu-item (click)="logout()">Déconnexion</button>
+        </mat-menu>
+        
+        <button *ngIf="role === 'ROLE_ADMIN'" mat-raised-button color="primary" (click)="navigateToAdmin()">Admin Dashboard</button>
+      </div>
+      
+      <button *ngIf="!isAuthenticated()" mat-raised-button color="primary" routerLink="./login">Connexion <mat-icon>person</mat-icon></button>
+     
+    
+
+  </mat-toolbar>
+   -->
+
+
+
+
+
+
+
+  
+
+
+  <!-- le header vertical -->
+  <!-- <header>
+    <div class="header-container">
+      <div class="header-left">
+        <a routerLink="/" class="logo">
+          <img src="assets/logo/Amazon_logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <div class="header-right">
+        <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <nav class="navigation" [class.open]="menuOpen">
+          <a mat-button routerLink="/shop">Boutique</a>
+          <a mat-button routerLink="/about">À propos</a>
+          <a mat-button routerLink="/contact">Contact</a>
+        </nav>
+        <div class="icons">
+          <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="userMenu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item routerLink="/profile">Mon profil</button>
+            <button mat-menu-item routerLink="/orders">Mes commandes</button>
+            <button mat-menu-item (click)="logout()">Déconnexion</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </header>
+   -->
+  
+
+
+
+   <!-- <header>
+    <div class="header-container">
+      <div class="header-left">
+        <a routerLink="/" class="logo">
+          <img src="assets/logo/Amazon_logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <div class="header-middle">
+        <div class="search-bar">
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Rechercher des produits" />
+            <button mat-icon-button matSuffix>
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="header-right">
+        <nav class="desktop-menu">
+          <a mat-button routerLink="/shop">Boutique</a>
+          <a mat-button routerLink="/about">À propos</a>
+          <a mat-button routerLink="/contact">Contact</a>
+        </nav>
+        <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="icons">
+          <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="userMenu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item routerLink="/profile">Mon profil</button>
+            <button mat-menu-item routerLink="/orders">Mes commandes</button>
+            <button mat-menu-item (click)="logout()">Déconnexion</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-menu" *ngIf="menuOpen">
+      <a mat-button routerLink="/shop">Boutique</a>
+      <a mat-button routerLink="/about">À propos</a>
+      <a mat-button routerLink="/contact">Contact</a>
+    </nav>
+  </header>
+   -->
+
+
+
+
+
+   <header>
+    <div class="header-container">
+      
+      <div class="header-left">
+        <a routerLink="/" class="logo">
+          <img src="assets/logo/lg3.svg" alt="Logo" />
+          <!-- <img src="assets/logo/tiptech2.svg" alt="Logo" /> -->
+        </a>
+      </div>
+
+      <div class="header-right">
+        <nav class="desktop-menu">
+          <a mat-button routerLink="/shop">Boutique</a>
+          <a mat-button routerLink="about">À propos</a>
+          <a mat-button routerLink="contact">Contact</a>
+        </nav>
+
+        <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <div class="icons">
+
+          <button mat-icon-button routerLink="cart">
+            <mat-icon aria-hidden="false" [matBadge]="cartItemsCount" [matBadgeHidden]="!cartItemsCount" matBadgeColor="warn" matBadgePosition="after">shopping_cart</mat-icon>
+          </button>
+
+          <button *ngIf="isAuthenticated()" mat-button [matMenuTriggerFor]="userMenu">
+            {{ fullName }}
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <div  *ngIf="isAuthenticated() && role === 'ROLE_USER'">
+              <button mat-menu-item [routerLink]="['./my-infos']" >Mes informations</button>
+              <button mat-menu-item [routerLink]="['./my-orders']">Mes commandes</button>
+            </div>
+
+            <div  *ngIf="isAuthenticated() && role === 'ROLE_ADMIN'">
+              <button mat-menu-item (click)="navigateToAdmin()">Admin Dashboard</button>
+            </div>
+            
+            <button mat-menu-item (click)="logout()">Déconnexion</button>
+          </mat-menu>
+
+          <button *ngIf="!isAuthenticated()" mat-raised-button  routerLink="./login">Connexion <mat-icon>person</mat-icon></button>
+
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-menu" [@menuAnimation]="menuOpen ? 'open' : 'closed'">
+      <a mat-button routerLink="/shop">Boutique</a>
+      <a mat-button routerLink="/about">À propos</a>
+      <a mat-button routerLink="/contact">Contact</a>
+    </nav>
+  </header>
+  
+
+
+
+  <!-- <div *ngIf="isAuthenticated()" style="display: block;justify-content: space-between;">
+
+    <button *ngIf="isAuthenticated() && role === 'ROLE_USER'" mat-icon-button routerLink="cart">
+      <mat-icon *ngIf="isAuthenticated()" aria-hidden="false" [matBadge]="cartItemsCount" [matBadgeHidden]="!cartItemsCount" matBadgeColor="warn" matBadgePosition="after"  >shopping_cart</mat-icon>
+    </button>
+
+
+    <button *ngIf="role === 'ROLE_USER'" mat-flat-button [matMenuTriggerFor]="userMenu">
+      <span *ngIf="fullName">{{ fullName }}</span>
+      <mat-icon>person</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item [routerLink]="['./my-orders']">Mes commandes</button>
+      <button mat-menu-item [routerLink]="['./my-infos']" >Mes informations</button>
+      <button mat-menu-item (click)="logout()">Déconnexion</button>
+    </mat-menu>
+    
+    <button *ngIf="role === 'ROLE_ADMIN'" mat-raised-button color="primary" (click)="navigateToAdmin()">Admin Dashboard</button>
+  </div>
+  
+  <button *ngIf="!isAuthenticated()" mat-raised-button color="primary" routerLink="./login">Connexion <mat-icon>person</mat-icon></button> -->

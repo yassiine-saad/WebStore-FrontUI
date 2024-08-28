@@ -1,0 +1,16 @@
+<div class="product-images-container" *ngIf="images.length">
+    <div class="main-image-container">
+      <button mat-icon-button class="nav-button prev-button" (click)="prevImage()">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <img [src]="images[currentIndex].url" alt="Product Image" class="main-image">
+      <button mat-icon-button class="nav-button next-button" (click)="nextImage()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+    <div class="thumbnails-container">
+      <img *ngFor="let image of images; let i = index" [src]="image?.url" alt="Product Thumbnail"
+           [class.selected]="i === currentIndex" (click)="selectImage(i)" class="thumbnail">
+    </div>
+  </div>
+  

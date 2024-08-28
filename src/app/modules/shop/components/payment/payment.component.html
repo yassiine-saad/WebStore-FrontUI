@@ -1,0 +1,173 @@
+<!-- <button (click)="pay()">Pay</button> -->
+
+
+<!-- <h1>Stripe Payment</h1>
+<button (click)="checkout()">Checkout</button>
+
+
+
+
+
+<hr>
+<form id="payment-form" (ngSubmit)="pay($event)">
+    <div id="card-element"></div>
+    <button type="submit" [disabled]="loading">Pay</button>
+    <div id="card-errors" role="alert"></div>
+</form> -->
+
+
+
+
+
+
+
+
+
+
+<div class="payment-container">
+    <mat-card class="payment-card">
+      <mat-card-header>
+        <mat-card-title>Credit Card</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="paymentForm" >
+          <div class="form-group">
+          </div>
+          <div class="form-group">
+            <div id="card-element" class="stripe-card-element"></div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+
+
+
+<!-- <div class="payment-container">
+    <mat-card class="payment-card">
+      <mat-card-header>
+        <mat-card-title>Paiement</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="paymentForm" >
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Nom sur la carte</mat-label>
+              <input matInput formControlName="name" placeholder="Nom complet">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <div id="card-element" class="stripe-card-element"></div>
+          </div>
+          <div class="button-group">
+            <button mat-raised-button color="primary" type="submit" (click)="pay($event)" [disabled]="paymentForm.invalid">Payer</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+   -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<script src="https://js.stripe.com/v3"></script>
+
+<form id="payment-form">
+    <div class="form-group">
+        <label for="card-element">Card number</label>
+        <div id="card-element"></div>
+        <div id="card-errors" role="alert"></div>
+    </div>
+    <button id="submit-button">Pay</button>
+</form>
+
+<script>
+    // Initialize Stripe.js with your public key
+    const stripe = Stripe('pk_test_51PMuIFFu0xChmaCeshoT260YnwqGn8dJIY4ZiOF25Enbvct02MUCsip7ouTayGqe476LRYw3iUueUgfUBpzJgKZG00hvUki1zR');
+
+    // Create elements for the card payment
+    const elements = stripe.elements({
+        fonts: [
+            {
+                family: 'Roboto',
+                src: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
+            },
+        ],
+    });
+
+    const cardElement = elements.create('card', {
+        style: {
+            base: {
+                fontSize: '16px',
+                color: '#32325d',
+            },
+        },
+    });
+
+    cardElement.mount('#card-element');
+
+    const card = elements.getElement(cardElement);
+
+    card.addEventListener('change', (event) => {
+        const displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+    const paymentForm = document.getElementById('payment-form');
+
+    paymentForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        // Create a PaymentIntent on the server
+        const response = await fetch('http://localhost:8080/api/v1/api/payment/create-payment-intent', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                amount: 1000, // Replace with your actual amount
+                currency: 'usd',
+                description: 'Your product description',
+            }),
+        });
+
+        const data = await response.json();
+
+        // Confirm the PaymentIntent with the card details
+        const { paymentIntent, error } = await stripe.confirmPayment(data.clientSecret, {
+            payment_method: card,
+            billing_details: {
+                name: 'John Doe',
+                email: 'john.doe@example.com',
+            },
+        });
+
+        if (error) {
+            // Handle error
+            console.error(error);
+        } else {
+            // Handle successful payment
+            console.log('Payment successful!', paymentIntent);
+        }
+    });
+</script> -->

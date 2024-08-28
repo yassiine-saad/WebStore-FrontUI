@@ -1,0 +1,46 @@
+.products {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.filter-button {
+  margin-left: 10px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions button {
+  margin-right: 5px;
+}
+
+.paginator {
+  margin-top: 20px;
+}

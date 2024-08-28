@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Utiliser 100% de la hauteur de la vue */
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+
+  .illustration {
+    display: block; /* Pour centrer l'image */
+    margin: 0 auto; /* Pour centrer horizontalement */
+    max-width: 100%; /* Pour s'assurer que l'image ne dépasse pas la largeur de son conteneur */
+    max-height: 200px; /* Spécifier la hauteur maximale de l'image */
+  }
+  

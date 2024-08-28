@@ -1,0 +1,86 @@
+<!-- <div class="editor-container">
+    <div class="toolbar">
+      <button mat-button (click)="format('bold')"><mat-icon>format_bold</mat-icon></button>
+      <button mat-button (click)="format('italic')"><mat-icon>format_italic</mat-icon></button>
+      <button mat-button (click)="format('underline')"><mat-icon>format_underlined</mat-icon></button>
+      <button mat-button (click)="changeFontSize('increase')"><mat-icon>format_size</mat-icon><span>+</span></button>
+      <button mat-button (click)="changeFontSize('decrease')"><mat-icon>format_size</mat-icon><span>-</span></button>
+      <input type="color" (input)="changeColor($event)" />
+    </div>
+    <div class="editor" contenteditable="true" #editor></div>
+    <button mat-raised-button color="primary" (click)="saveContent()">Save Content</button>
+    <div class="output" [innerHTML]="formattedContent"></div>
+  </div>
+   -->
+
+
+
+   <div class="editor-container">
+    <div class="toolbar">
+      <button mat-button  (click)="format('bold')" [class.active]="isBold">
+        <mat-icon>format_bold</mat-icon>
+      </button>
+      <button mat-button  (click)="format('italic')" [class.active]="isItalic">
+        <mat-icon>format_italic</mat-icon>
+      </button>
+      <button mat-button    (click)="format('underline')" [class.active]="isUnderline">
+        <mat-icon>format_underlined</mat-icon>
+      </button>
+      
+      <select [(ngModel)]="selectedFont" (change)="applyFont()">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Lucida Console">Lucida Console</option>
+            <option value="Impact">Impact</option>
+            <option value="Palatino">Palatino</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Garamond">Garamond</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Book Antiqua">Book Antiqua</option>
+            <option value="Century Gothic">Century Gothic</option>
+            <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+            <option value="Consolas">Consolas</option>
+            <option value="Copperplate">Copperplate</option>
+            <option value="Segoe UI">Segoe UI</option>
+      </select>
+
+      <!-- <button mat-button (click)="changeFontSize('increase')">
+        <mat-icon>format_size</mat-icon><span>+</span>
+      </button>
+      <button mat-button (click)="changeFontSize('decrease')">
+        <mat-icon>format_size</mat-icon><span>-</span>
+      </button> -->
+
+    <select [(ngModel)]="selectedFontSize" (change)="applyFontSize()">
+        <option value="1px">1px</option>
+        <option value="2px">2px</option>
+        <option value="3px">3px</option>
+        <option value="4px">4px</option>
+        <option value="5px">5px</option>
+        <option value="6px">6px</option>
+        <option value="7px">7px</option>
+    </select>
+
+    <button mat-icon-button (click)="toggleList('insertUnorderedList')" title="Liste à puces">
+        <mat-icon>format_list_bulleted</mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleList('insertOrderedList')" title="Liste numérotée">
+        <mat-icon>format_list_numbered</mat-icon>
+      </button>
+
+      <input type="color" [(ngModel)]="selectedColor">
+      <button mat-button color="primary" (click)="applyColor()">Appliquer</button>
+    </div>
+
+    <div class="editor" contenteditable="true" #editor (input)="updateContent()"></div>
+    <!-- <button mat-raised-button color="primary" (click)="saveContent()">Save Content</button>
+    <div class="output" [innerHTML]="formattedContent"></div> -->
+
+  </div>
+  

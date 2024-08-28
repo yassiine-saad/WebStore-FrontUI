@@ -1,0 +1,137 @@
+<!-- customers.component.html -->
+
+<div class="container">
+    <h2>Liste des clients</h2>
+  
+    <!-- Bouton d'ajout de client -->
+    <button mat-raised-button color="primary" class="add-button" (click)="addCustomer()" >Ajouter un client</button>
+  
+    <!-- Champs de filtres -->
+    <div class="filter-container">
+      <mat-form-field class="filter-field">
+        <input matInput placeholder="ID">
+      </mat-form-field>
+      <mat-form-field class="filter-field">
+        <input matInput placeholder="Nom">
+      </mat-form-field>
+      <mat-form-field class="filter-field">
+        <input matInput placeholder="Prénom">
+      </mat-form-field>
+      <mat-form-field class="filter-field">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+    </div>
+  
+     <!-- Paginateur -->
+     <mat-paginator
+      [pageIndex]="currentPage"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons 
+      [pageSize]="pageSize" 
+      [length]="totalElements"
+      (page)="onPageChange($event)"
+     ></mat-paginator>
+
+    <!-- Tableau des clients -->
+    <table mat-table [dataSource]="customers$" class="mat-elevation-z8">
+      <!-- Colonnes du tableau -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let customer">{{ customer.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>Prénom</th>
+        <td mat-cell *matCellDef="let customer">{{ customer.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Nom</th>
+        <td mat-cell *matCellDef="let customer">{{ customer.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let customer">{{ customer.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let customer">
+            <button mat-icon-button (click)="viewDetails(customer)"><mat-icon>visibility</mat-icon></button>
+            <button mat-icon-button (click)="editCustomer(customer)"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button (click)="deleteCustomer(customer)"><mat-icon>delete</mat-icon></button>
+        </td>
+      </ng-container>
+  
+      <!-- Lignes du tableau -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+   
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <!-- customer.component.html -->
+
+<!-- <mat-card>
+    <mat-card-header>
+      <mat-card-title>Liste des clients</mat-card-title>
+      <mat-card-subtitle>Recherche et gestion des clients</mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content>
+     
+      <mat-form-field appearance="fill">
+        <mat-label>Filtrer par ID, Nom, Prénom, Email</mat-label>
+        <input matInput type="text" [(ngModel)]="filterValue">
+      </mat-form-field>
+  
+    
+      <button mat-raised-button color="primary" (click)="addCustomer()">Ajouter un client</button>
+      
+  
+      <table mat-table [dataSource]="customers" class="mat-elevation-z8">
+  
+ 
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let customer">{{ customer.id }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef>Prénom</th>
+          <td mat-cell *matCellDef="let customer">{{ customer.firstName }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef>Nom</th>
+          <td mat-cell *matCellDef="let customer">{{ customer.lastName }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let customer">{{ customer.email }}</td>
+        </ng-container>
+  
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+   -->

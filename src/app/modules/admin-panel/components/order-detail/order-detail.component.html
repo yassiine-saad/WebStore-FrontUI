@@ -1,0 +1,52 @@
+<!-- order-detail.component.html -->
+
+<!-- <div class="order-details" *ngIf="order$ | async as order">
+    <h2>Détails de la commande #{{ order.orderId }}</h2>
+    <p><strong>Client :</strong> {{ order.clientFirstName }} {{ order.clientLastName }}</p>
+    <p><strong>Email :</strong> {{ order.clientEmail }}</p>
+    <p><strong>Téléphone :</strong> {{ order.clientTelephone }}</p>
+    <p><strong>Adresse :</strong> {{ order.clientAddress }}</p>
+    <p><strong>Méthode de récupération :</strong> {{ order.pickupMethod }}</p>
+    <p><strong>Méthode de paiement :</strong> {{ order.paymentMethod }}</p>
+    <p><strong>Date de création :</strong> {{ order.createdAt | date }}</p>
+    <p><strong>Statut :</strong> {{ order.status }}</p>
+    <h3>Articles :</h3>
+    <ul>
+      <li *ngFor="let item of order.orderItems">{{ item.quantity }} x {{ item.productName }}</li>
+    </ul>
+  </div>
+   -->
+
+
+   <!-- order-detail.component.html -->
+
+<!-- order-detail.component.html -->
+
+<div class="order-details" *ngIf="order$ | async as order">
+  <h2>Détails de la commande #{{ order.id }}</h2>
+  <div class="customer-info">
+    <h3>Informations sur le client</h3>
+    <p><strong>Nom :</strong> {{ order.user.firstName }} {{ order.user.lastName }}</p>
+    <p><strong>Email :</strong> {{ order.user.email }}</p>
+    <!-- <p><strong>Téléphone :</strong> {{ order.clientTelephone }}</p> -->
+    <p><strong>Adresse :</strong> {{ order.shippingAddress }}</p>
+  </div>
+  <div class="order-info">
+    <h3>Informations sur la commande</h3>
+    <p><strong>Méthode de récupération :</strong> {{ order.deliveryMethod }}</p>
+    <p><strong>Méthode de paiement :</strong> {{ order.paymentMethod }}</p>
+    <p><strong>Date de création :</strong> {{ order.orderDate | date }}</p>
+    <p><strong>Statut :</strong>  <strong [style.color]="order.status | statusColor "> {{ order.status }} </strong> </p>
+  </div>
+  <div class="order-items">
+    <h3>Articles de la commande</h3>
+    <ul>
+      <li *ngFor="let item of order.items">{{ item.quantity }} x {{ item.productName }}</li>
+    </ul>
+  </div>
+  <button mat-raised-button color="primary" *ngIf="order.status === 'CREATED'" (click)="confirmOrder(order.id)">Confirmer</button>
+  <!-- <button mat-raised-button color="primary" *ngIf="order.status === 'created'" (click)="confirmOrder()">Confirmer</button> -->
+  <button mat-raised-button color="accent" *ngIf="order.status === 'CONFIRMED'" (click)="cancelOrder(order.id)">Annuler</button>
+  <button mat-raised-button color="primary" *ngIf="order.status === 'CONFIRMED'" (click)="shipOrder(order.id)">Expédier</button>
+  <button mat-raised-button color="warn" *ngIf="order.status === 'SHIPPED'" (click)="markAsDelivered(order.id)">Marquer comme livrée</button>
+</div>

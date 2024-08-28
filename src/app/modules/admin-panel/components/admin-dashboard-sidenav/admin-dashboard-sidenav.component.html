@@ -1,0 +1,37 @@
+<!-- <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-container">
+        <button class="logo" mat-button  (click)="opensidenav()"><mat-icon >menu</mat-icon></button>
+        <div class="logo-text" *ngIf="collapsed"   @fadeInOut >Dashboard</div>
+        
+       <button class="btn-close"*ngIf="collapsed" (click)="closeSidenav()"><mat-icon >close</mat-icon></button>
+   
+
+    </div>
+   
+    <ul class="sidenav-nav">
+     <li class="sidenav-nav-item" *ngFor="let data of navigationData">
+        <a class="sidenav-nav-link" [routerLink]="[data.routelink]" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}">
+         <mat-icon class="sienav-link-icon">{{data.icon}}</mat-icon>
+         <span class="sidnav-link-text" *ngIf="collapsed"   @fadeInOut >{{data.label}}</span>
+         </a>
+      </li>
+    </ul>
+</div> -->
+
+
+
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-container">
+        <button class="logo" mat-button  (click)="opensidenav()"><mat-icon >menu</mat-icon></button>
+        <div class="logo-text" *ngIf="collapsed"   @slideInOut >Dashboard</div>
+    </div>
+   
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navigationData">
+            <a class="sidenav-nav-link" [routerLink]="[data.routelink]" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}">
+            <mat-icon mat-raised-button [matBadge]="data.badge" [matBadgeHidden]="!data.badge || collapsed" class="sienav-link-icon">{{data.icon}}</mat-icon>
+            <span class="sidnav-link-text" *ngIf="collapsed"   @slideInOut >{{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

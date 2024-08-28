@@ -1,0 +1,25 @@
+<div class="header" [ngClass]="getHeadClass()">
+    <mat-card>
+    <mat-card-content>
+      <div class="time-container">
+        <span> {{currentTime}}</span>
+      </div>
+     
+    
+  <div class="menu">
+    <button mat-button disabled style="color: rgb(36, 36, 126); font-weight: 500;"><mat-icon>person</mat-icon>{{fullName}}</button>
+    <button mat-button routerLink="settings"><mat-icon>settings_applications</mat-icon>paramètre</button>
+    <!-- <button mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon>{{usrData?.username}}</button> -->
+   
+    <button mat-button (click)="logout()" class="logout-button"><mat-icon>exit_to_app</mat-icon>Se déconnecter</button>
+  </div>
+     
+      
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><mat-icon>info</mat-icon>Account Info</button>
+        <button mat-menu-item (click)="logout()"  ><mat-icon>exit_to_app</mat-icon>Se déconnecter</button>
+      </mat-menu> 
+  
+    </mat-card-content>
+  </mat-card>
+</div>

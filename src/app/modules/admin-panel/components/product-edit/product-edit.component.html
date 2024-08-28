@@ -1,0 +1,118 @@
+<!-- <div class="edit-product">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Modifier le produit</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="product">
+
+      <form [formGroup]="productForm" class="form-container">
+        <div class="form-row">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nom"  formControlName="name" required>
+          </mat-form-field>
+        </div>
+
+        <div style="margin-top: 10px;margin-bottom: 10px;">
+          <app-text-editor [formattedContent]="description" (contentChanged)="onEditorContentChange($event)" ></app-text-editor>
+        </div>
+        
+
+        <div class="form-row">
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Prix" type="number" formControlName="price" required>
+          </mat-form-field>
+
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Stock" type="number"  formControlName="stockQuantity" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+
+          <mat-form-field class="full-width">
+            <mat-label>Catégorie</mat-label>
+            <mat-select name="category" formControlName="category" required>
+              <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-icon-button class="add-category-btn" (click)="addNewCategory()">
+            <mat-icon>add</mat-icon>
+          </button>
+
+        </div>
+
+        <div class="form-row">
+          <app-photo-uploader [photos]="photos" ></app-photo-uploader>
+        </div>
+
+        <div class="actions">
+          <button mat-raised-button color="primary" type="submit" (click)="saveChanges()" [disabled]="productForm.invalid" >Enregistrer</button>
+          <button mat-raised-button color="warn" type="button" (click)="cancel()">Annuler</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+ -->
+
+
+
+
+
+
+ <div class="edit-product">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Modifier le produit</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="product">
+
+      <form [formGroup]="productForm" class="form-container">
+        <div class="form-row">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nom"  formControlName="name" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <app-text-editor [formattedContent]="description" (contentChanged)="onEditorContentChange($event)"></app-text-editor>
+        </div>
+        
+        <div class="form-row">
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Prix" type="number" formControlName="price" required>
+          </mat-form-field>
+
+          <mat-form-field class="half-width">
+            <input matInput placeholder="Stock" type="number"  formControlName="stockQuantity" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field class="full-width">
+            <mat-label>Catégorie</mat-label>
+            <mat-select name="category" formControlName="category" required>
+              <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-icon-button class="add-category-btn" (click)="addNewCategory()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <div class="form-row">
+          <app-photo-uploader [photos]="photos"></app-photo-uploader>
+        </div>
+
+        <div class="actions">
+          <button mat-raised-button color="warn" type="button" (click)="cancel()">Annuler</button>
+          <button mat-raised-button color="primary" type="submit" (click)="saveChanges()" [disabled]="productForm.invalid">Enregistrer</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

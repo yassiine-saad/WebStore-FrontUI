@@ -1,0 +1,13 @@
+<!-- <app-side-nav ></app-side-nav>
+<app-header [collapsed]="sidNavCollapsed" [screenWidth]="screenWidth"></app-header>
+<div class="body" style="background-color: rgb(255, 255, 255); height: auto; width: auto;"
+[ngClass]="getBodyClass()" >
+<router-outlet></router-outlet>
+</div> -->
+
+
+<app-admin-dashboard-sidenav [navigationData]="navigationData" (OnToggledidenav)="OnToggledidenav($event)" > </app-admin-dashboard-sidenav>
+<app-admin-dashboard-header [collapsed]="sidNavCollapsed" [screenWidth]="screenWidth" ></app-admin-dashboard-header>
+<div class="body" style="background-color: rgb(255, 255, 255); height: auto; width: auto;" [ngClass]="getBodyClass()" >
+<router-outlet></router-outlet>
+</div>

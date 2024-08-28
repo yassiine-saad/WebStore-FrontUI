@@ -1,0 +1,81 @@
+<!-- customer-details.component.html -->
+
+<!-- <div class="container">
+    <h2 class="title">Détails du client</h2>
+    <div class="details-container" *ngIf="customer$ | async as customer" >
+      <mat-card class="customer-card">
+        <mat-card-header>
+          <mat-card-title>{{ customer.firstName }} {{ customer.lastName }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Email:</strong> {{ customer.email }}</p>
+          <p><strong>Téléphone:</strong> {{ customer.telephone }}</p>
+          <p><strong>Adresse:</strong> {{ customer.address }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+   -->
+
+
+   <!-- customer-details.component.html -->
+
+<!-- <div class="container">
+    <h2 class="title">Détails du client</h2>
+    <div *ngIf="customer$ | async as customer" class="details-container">
+      <div class="customer-card">
+        <div class="header">
+          <h3>{{ customer.firstName }} {{ customer.lastName }}</h3>
+          <span class="email">{{ customer.email }}</span>
+        </div>
+        <div class="content">
+          <p><strong>Téléphone:</strong> {{ customer.telephone }}</p>
+          <p><strong>Adresse:</strong> {{ customer.address }}</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <h2 class="title">Détails du client</h2>
+    <div *ngIf="customer$ | async as customer" class="details-container">
+      <div class="customer-card">
+        <div class="header">
+          <h3>{{ customer.firstName }} {{ customer.lastName }}</h3>
+          <span class="email">{{ customer.email }}</span>
+        </div>
+        <div class="content">
+          <p><strong>Téléphone:</strong> {{ customer.telephone }}</p>
+          <p><strong>Adresse:</strong> {{ customer.address }}</p>
+        </div>
+        <!-- <div class="buttons">
+          <button mat-raised-button color="warn" (click)="deleteCustomer()">Supprimer</button>
+          <button mat-raised-button color="primary" (click)="viewOrders()">Voir les commandes</button>
+          <button mat-raised-button color="accent" (click)="deactivateAccount()">Désactiver le compte</button>
+        </div> -->
+
+        <mat-list class="buttons">
+            <mat-list-item>
+              <button mat-button color="warn" (click)="deleteCustomer()">Supprimer</button>
+            </mat-list-item>
+            <mat-list-item>
+              <button mat-button color="primary" (click)="viewOrders()">Voir les commandes</button>
+            </mat-list-item>
+            <mat-list-item>
+              <button mat-button color="accent" (click)="deactivateAccount()">Désactiver le compte</button>
+            </mat-list-item>
+          </mat-list>
+
+          
+      </div>
+    </div>
+  </div>
+  

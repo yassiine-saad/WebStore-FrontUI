@@ -1,0 +1,77 @@
+<div class="order-details-container" *ngIf="order">
+    <h2>Détails de la Commande {{ order.orderNumber }}</h2>
+    
+    <div class="order-info">
+      <p><strong>Date de commande:</strong> {{ order.orderDate | date:'short' }}</p>
+      <p><strong>Statut:</strong> {{ order.status | orderStatus }}</p>
+      <p><strong>Méthode de paiement:</strong> {{ order.paymentMethod | paymentMethod }}</p>
+      <p><strong>Méthode de livraison:</strong> {{ order.deliveryMethod | deliveryMethod }}</p>
+      <p><strong>Adresse de livraison:</strong> {{ order.shippingAddress }}</p>
+    </div>
+  
+    <h3>Articles</h3>
+    <table mat-table [dataSource]="order.items" class="mat-elevation-z8">
+      <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef> Produit </th>
+        <td mat-cell *matCellDef="let item"> {{ item.productName }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> Quantité </th>
+        <td mat-cell *matCellDef="let item"> {{ item.quantity }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="productPrice">
+        <th mat-header-cell *matHeaderCellDef> Prix </th>
+        <td mat-cell *matCellDef="let item"> {{ item.productPrice | currency : 'EUR' }} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="['productName', 'quantity', 'productPrice']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['productName', 'quantity', 'productPrice']"></tr>
+    </table>
+  
+    <p class="total"><strong>Total:</strong> {{ getTotal(order) | currency : 'EUR' }}</p>
+  </div>
+  
+
+
+   <!-- <div class="order-details-container" *ngIf="order">
+    <h2>Détails de la Commande {{ order.orderNumber }}</h2>
+    
+    <div class="order-info">
+      <p><strong>Date de commande:</strong> {{ order.orderDate | date:'short' }}</p>
+      <p><strong>Statut:</strong> {{ order.status | orderStatus }}</p>
+      <p><strong>Méthode de paiement:</strong> {{ order.paymentMethod | paymentMethod }}</p>
+      <p><strong>Méthode de livraison:</strong> {{ order.deliveryMethod | deliveryMethod }}</p>
+      <p><strong>Adresse de livraison:</strong> {{ order.shippingAddress }}</p>
+    </div>
+  
+    <h3>Articles</h3>
+    <table mat-table [dataSource]="order.items" class="mat-elevation-z8">
+      <ng-container matColumnDef="productImage">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let item"> <img [src]="item" alt="{{ item.productName }}" class="product-image"> </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef> Produit </th>
+        <td mat-cell *matCellDef="let item"> {{ item.productName }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> Quantité </th>
+        <td mat-cell *matCellDef="let item"> {{ item.quantity }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="productPrice">
+        <th mat-header-cell *matHeaderCellDef> Prix </th>
+        <td mat-cell *matCellDef="let item"> {{ item.productPrice | currency : 'EUR' }} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="['productImage', 'productName', 'quantity', 'productPrice']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['productImage', 'productName', 'quantity', 'productPrice']"></tr>
+    </table>
+  
+    <p class="total"><strong>Total:</strong> {{ getTotal(order) | currency : 'EUR' }}</p>
+  </div>
+   -->

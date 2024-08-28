@@ -1,0 +1,50 @@
+
+
+<!-- 
+   <div class="image-visualizer" *ngIf="currentImage">
+ 
+    <div class="main-image" >
+      <img [src]="currentImage" alt="Product Image" [@fadeInOut]="currentIndex" >
+    </div>
+    
+ 
+    <div class="thumbnails">
+      <div *ngFor="let imagePath of images; let i = index" class="thumbnail" (click)="changeImage(i)">
+        <img [src]="imagePath" alt="Thumbnail Image">
+      </div>
+    </div>
+  
+
+    <div class="navigation">
+      <button mat-icon-button (click)="prevImage()" [disabled]="currentIndex === 0">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <button mat-icon-button (click)="nextImage()" [disabled]="currentIndex === images.length - 1">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+   -->
+
+
+   <div class="image-visualizer" *ngIf="currentImage">
+    <div class="main-image">
+      <img [src]="currentImage.imageUrl" [alt]="currentImage.imageName" [@fadeInOut]="currentIndex">
+    </div>
+    
+    <div class="thumbnails">
+      <div *ngFor="let image of images; let i = index" class="thumbnail" (click)="changeImage(i)">
+        <img [src]="image.imageUrl" [alt]="image.imageName">
+      </div>
+    </div>
+  
+    <div class="navigation">
+      <button mat-icon-button (click)="prevImage()" [disabled]="currentIndex === 0">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <button mat-icon-button (click)="nextImage()" [disabled]="currentIndex === images.length - 1">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  

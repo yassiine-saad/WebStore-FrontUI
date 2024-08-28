@@ -1,0 +1,73 @@
+
+
+
+<!-- <div class="register-container">
+  <mat-card class="register-card">
+    <mat-card-title>Créer un compte</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Prénom</mat-label>
+          <input matInput placeholder="Prénom" formControlName="firstname">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Nom" formControlName="lastname">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" type="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput placeholder="Mot de passe" formControlName="password" type="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="register-button">S'inscrire</button>
+      </form>
+      <button mat-button color="accent" class="login-button" (click)="navigateToLogin()">Se connecter</button>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+
+<div class="register-container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <img src="assets/illustrations/register-illustration.svg" alt="Illustration d'inscription" class="register-illustration">
+      <mat-card-title>Créer un compte</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Prénom</mat-label>
+          <input matInput placeholder="Prénom" formControlName="firstname">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Nom" formControlName="lastname">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" type="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput placeholder="Mot de passe" formControlName="password" type="password">
+          <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">
+            Le mot de passe doit contenir au moins 6 caractères.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirmer le mot de passe</mat-label>
+          <input matInput placeholder="Confirmer le mot de passe" formControlName="confirmPassword" type="password">
+          <mat-error *ngIf="registerForm.hasError('passwordMismatch')">
+            Les mots de passe ne correspondent pas.
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="register-button" [disabled]="registerForm.invalid" >S'inscrire</button>
+      </form>
+      <button mat-button color="accent" class="login-button" (click)="navigateToLogin()">Se connecter</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+

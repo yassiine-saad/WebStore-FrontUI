@@ -1,0 +1,43 @@
+<!-- <div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div> -->
+
+<!-- analytics.component.html -->
+<div class="analytics-container">
+    <h1>Tableau de bord Analytique</h1>
+  
+    <div class="card-container">
+      <mat-card>
+        <mat-card-title>Commandes Confirmées</mat-card-title>
+        <mat-card-content>{{ confirmedOrdersCount }}</mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>Commandes Non Confirmées</mat-card-title>
+        <mat-card-content>{{ unconfirmedOrdersCount }}</mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>Produits en Rupture de Stock</mat-card-title>
+        <mat-card-content>{{ outOfStockProductsCount }}</mat-card-content>
+      </mat-card>
+    </div>
+  
+    <div class="chart-container">
+      <div class="chart-card">
+        <div class="chart-title">Ventes Mensuelles</div>
+        <canvas id="salesChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Commandes Mensuelles</div>
+        <canvas id="ordersChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Répartition des Utilisateurs</div>
+        <canvas id="usersChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Revenus par Produit</div>
+        <canvas id="revenueChart"></canvas>
+      </div>
+    </div>
+  </div>
+  

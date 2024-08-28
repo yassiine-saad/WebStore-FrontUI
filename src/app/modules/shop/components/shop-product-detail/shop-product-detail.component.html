@@ -1,0 +1,38 @@
+
+<div>
+    <button mat-button color="primary" (click)="goBack()">Back to Product List</button>
+    <!-- <button class="back-button" (click)="goBack()">Back to Product List</button> -->
+</div>
+
+<div class="product-detail" *ngIf="product">
+    <div class="product-image">
+      <!-- <img [src]="product.imageUrl" alt="Product Image"> -->
+      <!-- <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image"> -->
+      <app-product-images-visualizer [images]="photos"></app-product-images-visualizer>
+    </div>
+    <div class="product-info">
+    
+      <h1>{{ product.name | titlecase }}</h1>
+      <!-- <p class="product-description" [innerHTML]="product.description">{{ product.description }}</p> -->
+      <p class="product-description" [innerHTML]="product.description"></p>
+      <p class="product-price">{{ product.price | currency : 'EUR' }}</p>
+
+    
+      <div class="stock-message" [ngClass]="{ 'low-stock': product.stockQuantity <= 10, 'out-of-stock': product.stockQuantity === 0, 'available-stock': product.stockQuantity > 10 }">
+        <p *ngIf="product.stockQuantity === 0">Ce produit est en rupture de stock</p>
+        <p *ngIf="product.stockQuantity > 0 && product.stockQuantity <= 10">Attention ! Stock faible</p>
+        <p *ngIf="product.stockQuantity > 10">En Stock</p>
+      </div>
+    
+  
+
+      <div class="quantity-selector">
+        <button (click)="decreaseQuantity()">-</button>
+        <span>{{ quantity }}</span>
+        <button (click)="increaseQuantity()">+</button>
+      </div>
+
+      <button class="add-to-cart-button" (click)="addToCart()" >Add to Cart</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,234 @@
+
+/* 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-field {
+    width: 300px;
+  }
+  
+  .add-button {
+    margin-left: 20px;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-row:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .mat-cell,
+  .mat-header-cell {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .mat-row:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .mat-row:nth-child(odd) {
+    background-color: #fff;
+  } */
+
+
+  /* order.component.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-field {
+    margin-right: 20px;
+  }
+  
+  .add-button {
+    margin-left: 20px;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-row:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .mat-cell,
+  .mat-header-cell {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .mat-row:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .mat-row:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  /* order.component.css */
+
+.card-container {
+    margin-bottom: 20px; /* Ajoutez l'espace souhaité entre les cartes */
+  }
+
+  
+  /* order.component.css */
+
+.paginator-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  
+  /* order.component.css */
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+   /* 2*/
+   /* .container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-field {
+    width: 300px;
+  }
+  
+  .add-button {
+    background-color: #ff4081;
+    color: white;
+    margin-left: 20px;
+  }
+  
+  .add-button:hover {
+    background-color: #ff0055;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .mat-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .mat-header-cell {
+    background-color: #ff4081;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #f50057;
+  }
+  
+  .mat-row {
+    transition: background-color 0.3s ease;
+  }
+  
+  .mat-row:hover {
+    background-color: #f2f2f2;
+  }
+   */

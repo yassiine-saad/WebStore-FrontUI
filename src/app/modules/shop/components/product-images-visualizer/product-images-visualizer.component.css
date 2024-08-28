@@ -1,0 +1,54 @@
+.product-images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Définit la largeur maximale */
+}
+
+.main-image-container {
+  position: relative;
+  width: 100%; /* Utilise la largeur maximale */
+  height: 60vw; /* Utilise une hauteur relative à la largeur de l'écran */
+  max-height: 550px; /* Limite la hauteur maximale */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.thumbnail:hover, .thumbnail.selected {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .main-image-container {
+      height: 50vw; /* Utilise une hauteur relative pour les petits écrans */
+  }
+}

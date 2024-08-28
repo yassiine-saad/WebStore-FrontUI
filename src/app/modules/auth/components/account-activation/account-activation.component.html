@@ -1,0 +1,29 @@
+
+
+  <div *ngIf="!sucess && !failure" class="center-container">
+    <mat-card class="code-input-card">
+      <img src="/assets/illustrations/mail_sent.svg" alt="Illustration" class="illustration">
+      <h2>Activer votre compte</h2>
+      <p>Veuillez entrer le code à 6 chiffres envoyé à votre adresse email.</p>
+      
+      <app-code-input (codeSubmit)="activateAccount($event)" ></app-code-input>
+    </mat-card>
+  </div>
+
+
+  <div *ngIf="sucess" class="center-container">
+    <mat-card class="code-input-card">
+      <img src="/assets/illustrations/undraw_done.svg" alt="Illustration" class="illustration">
+      <h2>Votre compte est activé !</h2>
+      <p>Votre compte a été activé avec succès. Vous pouvez maintenant vous connecter et profiter de notre service.</p>
+    </mat-card>
+  </div>
+
+  <div *ngIf="failure" class="center-container">
+    <mat-card class="code-input-card">
+      <img src="/assets/illustrations/undraw_cancel.svg" alt="Illustration" class="illustration">
+      <h2>Échec de l'activation du compte</h2>
+      <p>Votre compte n'a pas pu être activé. Veuillez vérifier que le code d'activation est correct et réessayer. Si le problème persiste, veuillez contacter le support.</p>
+    </mat-card>
+  </div>
+  

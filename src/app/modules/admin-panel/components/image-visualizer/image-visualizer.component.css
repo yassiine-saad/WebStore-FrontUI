@@ -1,0 +1,88 @@
+
+
+   .main-image {
+    width: 600px; /* Définir la largeur fixe souhaitée */
+    height: 500px; /* Définir la hauteur fixe souhaitée */
+    overflow: hidden; /* Masquer le débordement pour maintenir le cadre fixe */
+    position: relative; /* Position relative pour positionner l'image à l'intérieur */
+  }
+  
+  .main-image img {
+    max-width: 100%; /* Utiliser la largeur maximale possible */
+    max-height: 100%; /* Utiliser la hauteur maximale possible */
+    width: auto; /* Utiliser la largeur d'origine de l'image */
+    height: auto; /* Utiliser la hauteur d'origine de l'image */
+    position: absolute; /* Position absolue pour redimensionner l'image */
+    top: 50%; /* Centrer l'image verticalement */
+    left: 50%; /* Centrer l'image horizontalement */
+    transform: translate(-50%, -50%); /* Centrer l'image exactement */
+  }
+
+  
+  
+
+   /* .main-image {
+    width: 500px; 
+    height: 350px; 
+    overflow: hidden; 
+  } */
+  
+  /* .main-image img {
+    max-width: none; 
+    width: auto; 
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+  } */
+
+  
+.image-visualizer {
+    position: relative;
+    /* border: solid 1px; */
+  }
+  
+  /* .main-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  } */
+  
+  .thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .thumbnail {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .thumbnail img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .navigation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .navigation button {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+
+
+
+
+
+

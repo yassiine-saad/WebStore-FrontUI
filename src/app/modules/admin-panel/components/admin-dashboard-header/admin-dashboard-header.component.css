@@ -1,0 +1,53 @@
+.header{
+  width: calc(100% - 5rem);
+  height:5.5rem;
+  margin-left:5rem;
+  z-index: 1;
+  transition: all .3s ease;
+  background:white;
+  /* position: fixed;
+  top:0; */
+  /* padding:1rem  1.5rem 1rem 1.5rem; */
+  padding: 5px;
+  
+}
+
+.menu {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+
+}
+.menu button{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase
+}
+mat-card-content {
+  display: flex;
+  align-items: center;
+}
+
+.time-container {
+  order: -1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+
+.logout-button:hover {
+  color: red;
+  
+}
+
+.head-trimmed{
+width: calc(100% - 16.6565rem);
+margin-left: 16.5625rem;;
+} 
+.head-md-screen{
+ width: calc(100% - 5rem);
+ margin-left: 5rem; 
+}

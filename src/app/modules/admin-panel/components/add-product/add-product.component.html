@@ -1,0 +1,65 @@
+<div class="add-product">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Ajouter un produit</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="productForm">
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nom" name="name"  formControlName="name" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field class="full-width">
+            <textarea matInput placeholder="Description" rows="8" name="description" formControlName="description" required></textarea>
+          </mat-form-field> -->
+
+          <div style="margin-top: 10px;margin-bottom: 10px;">
+            <app-text-editor [formattedContent]="description" (contentChanged)="onEditorContentChange($event)" ></app-text-editor>
+          </div>
+          
+
+          <mat-form-field class="full-width">
+            <mat-label>Catégorie</mat-label>
+            <mat-select name="category" formControlName="category" required>
+              <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Prix" type="number" name="price"  formControlName="price" required>
+          </mat-form-field>
+
+          
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Stock" type="number"  formControlName="stockQuantity" required>
+          </mat-form-field>
+          <!-- <mat-form-field class="full-width">
+            <input  type="file"  accept="image/*" multiple>
+          </mat-form-field> -->
+
+          <!-- <div class="full-width">
+            <input type="file" #selectFile (change)="handleFileInput($event)" accept="image/*" multiple>
+          </div> -->
+
+          <!-- <app-image-uploader></app-image-uploader> -->
+
+          <!-- <app-image-uploader (filesAdded)="onFilesAdded($event)"></app-image-uploader> -->
+
+          <div class="parent-container">
+            <app-photo-uploader [photos]="photos" ></app-photo-uploader>
+            <!-- <button mat-raised-button color="primary" (click)="submitPhotos()">Soumettre</button> -->
+          </div>
+          
+
+
+          <div class="actions">
+            <button mat-raised-button color="primary" type="submit" (click)="addProduct()" [disabled]="productForm.invalid">Ajouter</button>
+            <button mat-raised-button color="warn" type="button" (click)="cancel()">Annuler</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

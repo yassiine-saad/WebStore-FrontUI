@@ -1,0 +1,84 @@
+/* user-info.component.css */
+/* .user-info {
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+   */
+
+
+
+   /* user-info.component.css */
+.user-info {
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    margin-top: 1rem;
+  }
+  
+
+
+  .phone-form {
+
+    .phone-form {
+    display: flex;
+    gap: 16px;
+    }
+      
+    .country-code,.phone-number {
+    flex: 1;
+    }
+
+
+  mat-form-field {
+    width: 100%;
+  }
+  
+
+  .mat-select-panel {
+    background-color: #f5f5f5; /* Couleur de fond */
+    border-radius: 4px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre */
+  }
+  
+  /* Style du champ de numéro de téléphone */
+  mat-form-field.mat-form-field {
+    font-size: 16px; /* Taille de police */
+  }
+  
+  .mat-form-field-underline {
+    border-bottom-color: #2196f3 !important; /* Couleur de la bordure inférieure */
+  }
+  
+  /* Style du bouton de soumission */
+  button[type="submit"] {
+    background-color: #2196f3; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    font-size: 16px; /* Taille de police */
+    padding: 12px 24px; /* Rembourrage */
+    border: none; /* Supprime la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0c7bb3; /* Couleur de fond au survol */
+  }
+  
+  
+  
+  }
+

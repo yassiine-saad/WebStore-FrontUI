@@ -1,0 +1,112 @@
+<!-- <div class="user-orders-container">
+    <h2>Mes Commandes</h2>
+    <mat-list *ngIf="orders.length > 0; else noOrders">
+      <mat-list-item *ngFor="let order of orders">
+        <div class="order-item">
+          <div>
+            <h3>{{ order.orderNumber }}</h3>
+            <p>Date: {{ order.orderDate | date }}</p>
+            <p>Status: {{ order.status }}</p>
+            <p>Mode de paiement: {{ order.paymentMethod }}</p>
+            <p>Mode de livraison: {{ order.deliveryMethod }}</p>
+          </div>
+          <div>
+            <mat-list>
+              <mat-list-item *ngFor="let item of order.items">
+                <p>{{ item.productName }} (x{{ item.quantity }}) - {{ item.productPrice | currency }}</p>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <ng-template #noOrders>
+      <p>Vous n'avez pas de commandes.</p>
+    </ng-template>
+  </div>
+   -->
+<!-- 
+   <div class="user-orders-container">
+    <h2>Mes Commandes</h2>
+    <mat-list *ngIf="orders.length > 0; else noOrders">
+      <ng-container *ngFor="let order of orders">
+        <mat-list-item>
+          <div class="order-details">
+            <h3>Commande {{ order.orderNumber }}</h3>
+            <p><strong>Date:</strong> {{ order.orderDate | date:'short' }}</p>
+            <p><strong>Status:</strong> {{ order.status }}</p>
+            <p><strong>Mode de paiement:</strong> {{ order.paymentMethod }}</p>
+            <p><strong>Mode de livraison:</strong> {{ order.deliveryMethod }}</p>
+          </div>
+          <div class="order-items">
+            <h4>Articles</h4>
+            <mat-list>
+              <mat-list-item *ngFor="let item of order.items">
+                <p>{{ item.productName }} (x{{ item.quantity }}) - {{ item.productPrice | currency }}</p>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+    <ng-template #noOrders>
+      <p>Vous n'avez pas de commandes.</p>
+    </ng-template>
+  </div>
+   -->
+
+
+   <div class="orders-container">
+    <h2>Mes Commandes</h2>
+    <table mat-table [dataSource]="orders" class="mat-elevation-z8">
+      
+      <!-- Order Number Column -->
+      <ng-container matColumnDef="orderNumber">
+        <th mat-header-cell *matHeaderCellDef> Numéro de Commande </th>
+        <td mat-cell *matCellDef="let order"> {{ order.orderNumber }} </td>
+      </ng-container>
+  
+      <!-- Order Date Column -->
+      <ng-container matColumnDef="orderDate">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let order"> {{ order.orderDate | date:'short' }} </td>
+      </ng-container>
+  
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Statut </th>
+        <td mat-cell *matCellDef="let order"> {{ order.status | orderStatus  }} </td>
+      </ng-container>
+  
+      <!-- Payment Method Column -->
+      <ng-container matColumnDef="paymentMethod">
+        <th mat-header-cell *matHeaderCellDef> Méthode de Paiement </th>
+        <td mat-cell *matCellDef="let order"> {{ order.paymentMethod | paymentMethod }} </td>
+      </ng-container>
+  
+      <!-- Delivery Method Column -->
+      <ng-container matColumnDef="deliveryMethod">
+        <th mat-header-cell *matHeaderCellDef> Méthode de Livraison </th>
+        <td mat-cell *matCellDef="let order"> {{ order.deliveryMethod | deliveryMethod }} </td>
+      </ng-container>
+  
+      <!-- Total Column -->
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total </th>
+        <td mat-cell *matCellDef="let order"> {{ getTotal(order) | currency : 'EUR' }} </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let order">
+          <button mat-button color="primary" (click)="viewOrderDetails(order)">Détails</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

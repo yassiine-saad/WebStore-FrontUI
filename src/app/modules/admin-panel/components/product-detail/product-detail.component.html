@@ -1,0 +1,27 @@
+<div class="product-detail" *ngIf="product">
+    <!-- <div class="product-image" *ngFor="let image of product.imagePaths">
+      <img src="https://cdn-4.motorsport.com/images/amp/Y99eZpLY/s1000/formula-1-japanese-gp-2023-lew-2.jpg" alt="Product Image">
+    </div> -->
+
+    <div class="product-image" >
+      <div class="image-visualizer">
+        <!-- <app-image-visualizer [images]="product.images" ></app-image-visualizer> -->
+        <app-admin-images-visualizer [photos]="photos"></app-admin-images-visualizer>
+        <!-- <img src="https://www.formula1.com/content/dam/fom-website/manual/Trademarks/f1-red-800px.png" alt="Product Image"> -->
+      </div>  
+    </div>
+
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <!-- <p class="description">{{ product.description }}</p> -->
+      <p class="description" [innerHTML]="product.description"></p>
+      <p class="price">Prix: {{ product.price }} $</p>
+      <!-- Ajoutez d'autres détails du produit selon vos besoins -->
+      <div class="actions">
+        <!-- <button mat-button color="primary">Ajouter au panier</button> -->
+        <button mat-button color="primary" (click)="editProduct()">Modifier</button>
+        <button mat-button (click)="deleteProduct()">Supprimer</button>
+      </div>
+    </div>
+  </div>
+  

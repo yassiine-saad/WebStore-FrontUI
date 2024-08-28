@@ -1,0 +1,77 @@
+<!-- <div class="product-list">
+  
+    <div class="search-filters">
+      <div class="search-container">
+        <mat-form-field class="search-input">
+          <input matInput placeholder="Search products" [(ngModel)]="searchQuery">
+        </mat-form-field>
+      </div>
+      
+      <div class="category-filters">
+        <button mat-button *ngFor="let category of categories" (click)="filterByCategory(category.name)">
+          {{ category.name }}
+        </button>
+      </div>
+
+    </div>
+
+   
+    <div class="search-filters">
+      <div class="search-container">
+        <mat-form-field appearance="outline" class="search-input">
+          <input matInput placeholder="Rechercher des produits" [(ngModel)]="searchQuery">
+        </mat-form-field>
+      </div>
+  
+      <div class="category-filters">
+        <button mat-button *ngFor="let category of categories" (click)="filterByCategory(category.name)">
+          {{ category.name }}
+        </button>
+      </div>
+    </div>
+
+
+    <h1>Productaa List</h1>
+    
+    <div class="product-grid">
+      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+    </div>
+
+    <mat-paginator [length]="totalElements" [pageSize]="pageSize" [pageIndex]="currentPage"  [pageSizeOptions]="[4, 8, 12, 16,20,40,60]" showFirstLastButtons (page)="onPageChange($event)"></mat-paginator>
+  </div>
+   -->
+
+
+
+   <div class="product-list">
+    <div class="search-filters">
+      <div class="search-container">
+        <mat-form-field appearance="outline" class="search-input">
+          <input matInput placeholder="Rechercher des produits" [(ngModel)]="searchQuery" (ngModelChange)="onSearchChange()">
+          <mat-icon matSuffix class="search-icon">search</mat-icon>
+        </mat-form-field>
+      </div>
+  
+      <div class="category-filters">
+        <button mat-button *ngFor="let category of categories" (click)="filterByCategory(category.id)">
+          {{ category.name }}
+        </button>
+      </div>
+    </div>
+  
+    <h1>Liste des Produits</h1>
+    
+    <div class="product-grid">
+      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+    </div>
+  
+    <mat-paginator 
+      [length]="totalElements" 
+      [pageSize]="pageSize" 
+      [pageIndex]="currentPage"  
+      [pageSizeOptions]="[4, 8, 12, 16, 20, 40, 60]" 
+      showFirstLastButtons 
+      (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+  

@@ -1,0 +1,19 @@
+<div class="contact-page">
+    <h1>Contactez-nous</h1>
+    <form (ngSubmit)="submitForm()">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="contactForm.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" >
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="contactForm.email" name="email" type="email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" >
+        <mat-label>Message</mat-label>
+        <textarea matInput [(ngModel)]="contactForm.message" name="message" required></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Envoyer</button>
+    </form>
+  </div>
+  

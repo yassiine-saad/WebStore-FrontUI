@@ -1,0 +1,134 @@
+/* .code-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.code-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.code-input:focus {
+  border-color: #3f51b5;
+} */
+
+
+
+/* .code-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.code-input input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 16px;
+} */
+
+
+/* .code-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.code-input input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 16px;
+} */
+
+
+.code-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.code-input-container h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.code-input-container p {
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: #666666;
+  text-align: center;
+}
+
+.code-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.code-input input {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.code-input input:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 8px rgba(63, 81, 181, 0.2);
+}
+
+button {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+

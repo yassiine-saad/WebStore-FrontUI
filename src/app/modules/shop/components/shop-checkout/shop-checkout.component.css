@@ -1,0 +1,194 @@
+.checkout-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .checkout-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .checkout-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .checkout-item img {
+    max-width: 100px;
+    margin-right: 20px;
+  }
+  
+  .item-details {
+    flex-grow: 1;
+  }
+  
+  .item-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  .item-details p {
+    margin: 0 0 10px 0;
+    color: #666;
+  }
+  
+  .checkout-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .confirm-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #218838;
+  }
+  
+
+
+  .checkout-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.checkout-form {
+    margin-top: 20px;
+
+
+    
+    .pickup-address {
+        font-weight: bold;
+        font-size: 16px;
+        color: #333;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+  
+    mat-card {
+        padding: 20px; /* Ajoute du padding à l'intérieur des cartes */
+        margin-bottom: 20px; /* Ajoute une marge en bas des cartes pour créer de l'espace entre elles */
+    }
+
+    mat-form-field {
+        margin-bottom: 15px;
+        width: 100%;
+      }
+      
+      /* Aligner les éléments du formulaire sur toute la largeur */
+    input {
+    width: 100%;
+    }
+      
+      
+    /* .form-group {
+        margin-bottom: 20px;
+    }
+      
+
+    .mat-card {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      textarea, select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+      }
+      
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      
+      button:hover {
+        background-color: #218838;
+      } */
+
+    
+  }

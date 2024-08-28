@@ -1,0 +1,59 @@
+<!-- add-customer.component.html -->
+<!-- 
+<div class="container">
+    <h2>Ajouter un client</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Prénom" [(ngModel)]="firstName" name="firstName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nom" [(ngModel)]="lastName" name="lastName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Téléphone" [(ngModel)]="telephone" name="telephone">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Adresse" [(ngModel)]="address" name="address" rows="4"></textarea>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Ajouter</button>
+    </form>
+  </div>
+   -->
+
+
+   <!-- add-customer.component.html -->
+
+<div class="container">
+    <h2 class="title">Ajouter un client</h2>
+  
+    <form (ngSubmit)="onSubmit()" class="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Prénom" [(ngModel)]="firstName" name="firstName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nom" [(ngModel)]="lastName" name="lastName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+      </mat-form-field>
+      
+      <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="Mot de passe" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Téléphone" [(ngModel)]="telephone" name="telephone">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Adresse" [(ngModel)]="address" name="address" rows="4"></textarea>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" class="submit-button">Ajouter</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,134 @@
+<!-- <div class="image-uploader">
+    <input type="file" (change)="handleFileInput($event)" multiple>
+    <div class="drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+      <p>Glissez-déposez les fichiers ici</p>
+    </div>
+    <div class="preview">
+      <div *ngFor="let image of images; let i = index" class="image-container">
+        <img [src]="image" alt="Image {{ i + 1 }}">
+        <button mat-icon-button (click)="removeImage(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <!-- <div class="image-uploader">
+    <label class="file-upload">
+      <input type="file" (change)="handleFileInput($event)" multiple>
+      <span>Ajouter des images</span>
+    </label>
+    <div class="drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+      <p>Glissez-déposez les fichiers ici</p>
+    </div>
+    <div class="preview" *ngIf="images.length > 0">
+      <div class="image-container" *ngFor="let image of images; let i = index">
+        <img [src]="image" alt="Image {{ i + 1 }}">
+        <button mat-icon-button (click)="removeImage(i)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="image-uploader">
+    <label class="file-upload">
+      <input type="file" (change)="handleFileInput($event)" multiple>
+      <span>Ajouter des images</span>
+    </label>
+    <div class="drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+      <p>Glissez-déposez les fichiers ici</p>
+    </div>
+    <div class="preview" *ngIf="images.length > 0">
+      <div class="image-container" *ngFor="let image of images; let i = index">
+        <img [src]="image" alt="Image {{ i + 1 }}">
+        <button mat-icon-button (click)="removeImage(i)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div> -->
+  
+  
+
+
+  <!-- <div class="image-uploader">
+    <div class="drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+      <label class="file-upload">
+        <input type="file" (change)="handleFileInput($event)" multiple>
+        <span>Ajouter des images</span>
+      </label>
+      <p>OU</p>
+      <p>Glissez-déposez les fichiers ici</p>
+    </div>
+    <div class="preview" *ngIf="images.length > 0">
+      <div class="image-container" *ngFor="let image of images; let i = index">
+        <img [src]="image" alt="Image {{ i + 1 }}">
+        <button mat-icon-button (click)="removeImage(i)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div> -->
+  
+
+
+
+  <!-- ////////////////////////////// 19 /05 /2024 ////////////////// -->
+
+  <!-- image 5 -->
+  <!-- <div class="image-uploader">
+    <label class="file-upload">
+        <input type="file" (change)="handleFileInput($event)" multiple>
+        <span>Ajouter des images</span>
+    </label>
+    <div class="drop-area" 
+         (dragover)="onDragOver($event)" 
+         (dragenter)="onDragEnter($event)" 
+         (dragleave)="onDragLeave($event)"
+         (drop)="onDrop($event)">
+      
+      <p>OU</p>
+      <p>Glissez-déposez les fichiers ici</p>
+    </div>
+    <div class="preview" *ngIf="images.length > 0">
+      <div class="image-container" *ngFor="let image of images; let i = index">
+        <img [src]="image" alt="Image {{ i + 1 }}">
+        <button mat-icon-button (click)="removeImage(i)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div> -->
+  
+
+
+
+
+
+
+  <div class="image-uploader">
+    <label class="file-upload">
+      <input type="file" (change)="handleFileInput($event)" multiple>
+      <span>Ajouter des images</span>
+    </label>
+    <div class="drop-area" 
+         (dragover)="onDragOver($event)" 
+         (dragenter)="onDragEnter($event)" 
+         (dragleave)="onDragLeave($event)"
+         (drop)="onDrop($event)">
+      <p>OU</p>
+      <p>Glissez-déposez les fichiers ici</p>
+    </div>
+    <div class="preview" *ngIf="images.length > 0">
+      <div class="image-container" *ngFor="let image of images; let i = index">
+        <img [src]="image.imageUrl" [alt]="image.imageName">
+        <button mat-icon-button (click)="removeImage(i)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  

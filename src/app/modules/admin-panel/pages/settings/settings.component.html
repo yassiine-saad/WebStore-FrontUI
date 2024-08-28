@@ -1,0 +1,36 @@
+<!-- settings.component.html -->
+
+<!-- settings.component.html -->
+
+<div class="container">
+    <h2 class="title">Paramètres du compte</h2>
+    <div class="info-section">
+      <h3>Informations du compte</h3>
+      <div class="info">
+        <p><strong>Nom d'utilisateur:</strong> {{ username }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Role:</strong> {{ role }}</p>
+      </div>
+    </div>
+    <div class="password-section">
+      <h3>Modifier le mot de passe</h3>
+      <div class="form-group">
+        <label for="currentPassword">Mot de passe actuel:</label>
+        <input type="password" id="currentPassword" name="currentPassword" [(ngModel)]="currentPassword">
+      </div>
+      <div class="form-group">
+        <label for="newPassword">Nouveau mot de passe:</label>
+        <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword">
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirmer le nouveau mot de passe:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword">
+      </div>
+      <button class="update-button" (click)="updatePassword()">Mettre à jour le mot de passe</button>
+    </div>
+    <div class="export-section">
+      <h3>Exporter les données</h3>
+      <button class="export-button" (click)="exportData()">Exporter les données</button>
+    </div>
+  </div>
+  

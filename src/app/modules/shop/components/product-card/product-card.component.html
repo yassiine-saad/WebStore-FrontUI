@@ -1,0 +1,58 @@
+<!-- <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="product.imageUrl" alt="Product Image">
+    <mat-card-content>
+      <p>{{ product.description }}</p>
+      <p>Price: {{ product.price }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="addToCart()">Add to Cart</button>
+      <button mat-button color="accent" (click)="viewDetails()">View Details</button>
+    </mat-card-actions>
+  </mat-card> -->
+
+  
+  <!-- <mat-card class="product-card" [routerLink]="['../products', product.id]" >
+    <img mat-card-image class="product-image" src="{{ product.images[0].imageUrl }}" alt="Product Image">
+    <img mat-card-image src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" alt="Product Image">
+    <mat-card-content>
+      <h2 class="product-title">{{ product.name }}</h2>
+      <div class="product-info">
+        <p class="product-price">{{ product.price | currency : 'EUR'}}</p>
+        <button mat-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+   -->
+
+  <!-- <mat-card class="product-card" [routerLink]="['../products', product.id]" >
+
+    <div class="image-frame">
+      <img mat-card-image class="product-image" src="{{ product.images[0].imageUrl }}" alt="Product Image">
+    </div>
+
+    <h2 class="product-title">{{ product.name }}</h2>
+    <div class="product-info">
+      <p class="product-price">{{ product.price | currency : 'EUR'}}</p>
+      <button mat-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+    </div>
+
+  </mat-card>
+   -->
+
+   <mat-card class="product-card">
+    <img mat-card-image [src]="product.images[0].imageUrl" alt="Product Image" class="product-image">
+    <mat-card-content class="product-details">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-price">{{ product.price | currency : 'EUR'}}</p>
+    </mat-card-content>
+    <mat-card-actions class="product-actions">
+      <button mat-button color="primary" class="details-button" [routerLink]="['../products', product.id]" >Voir plus de détails</button>
+      <button mat-icon-button color="primary" class="add-to-cart-button" (click)="addToCart()">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  

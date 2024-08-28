@@ -1,0 +1,17 @@
+/* customers.component.css */
+
+.container {
+  padding: 20px;
+}
+
+.filter-field {
+  margin-right: 10px;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-row:hover {
+  background-color: #f2f2f2;
+}

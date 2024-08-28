@@ -1,0 +1,59 @@
+
+
+   .editor-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+
+  .toolbar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toolbar button.active {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  .toolbar mat-icon {
+    vertical-align: middle;
+  }
+  
+  .toolbar input[type="color"] {
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .editor {
+    min-height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .output {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 100px;
+    background-color: #f9f9f9;
+  }
+  

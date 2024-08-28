@@ -1,0 +1,16 @@
+.add-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .actions {
+    margin-top: 20px;
+    text-align: center;
+  }
+  

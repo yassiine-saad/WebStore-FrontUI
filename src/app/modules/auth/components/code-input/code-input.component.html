@@ -1,0 +1,61 @@
+<!-- <div class="code-input-container">
+  <input *ngFor="let item of inputs; let i = index" 
+         type="text" 
+         maxlength="1" 
+         class="code-input"
+         (input)="onInput($event, i)" 
+         (keydown)="onKeyDown($event, i)" 
+         [(ngModel)]="inputs[i]">
+</div> -->
+
+
+
+<!-- <div class="code-input-container">
+  <input *ngFor="let item of inputs; let i = index" 
+         id="code-input-{{i}}"
+         type="text" 
+         maxlength="1" 
+         class="code-input"
+         (input)="onInput($event, i)" 
+         (keydown)="onKeyDown($event, i)" 
+         [(ngModel)]="inputs[i]">
+</div> -->
+
+
+
+<!-- <div class="code-input-container">
+  <div class="code-input">
+    <input type="text" maxlength="1" *ngFor="let ctrl of codeInputs; let i = index"
+           [attr.id]="'codeInput' + i"
+           [ngModel]="codeInputs[i]"
+           (input)="onInputChange($event, i)"
+           (keydown)="onKeyDown($event, i)" />
+  </div>
+  <button mat-raised-button color="primary" (click)="submitCode()">Valider</button>
+</div> -->
+
+
+<!-- <div class="code-input-container">
+  <div class="code-input">
+    <input type="text" maxlength="1" *ngFor="let ctrl of codeInputs; let i = index"
+           [attr.id]="'codeInput' + i"
+           [ngModel]="codeInputs[i]"
+           (ngModelChange)="onInputChange($event, i)"
+           (keydown)="onKeyDown($event, i)" />
+  </div>
+  <button mat-raised-button color="primary" (click)="submitCode()">Valider</button>
+</div> -->
+
+
+<div class="code-input-container" [formGroup]="codeForm">
+  <div class="code-input">
+    <input type="text" maxlength="1" *ngFor="let ctrl of controls; let i = index"
+           [formControlName]="i"
+           [attr.id]="'codeInput' + i"
+           (input)="onInputChange($event, i)"
+           (keydown)="onKeyDown($event, i)"
+           (paste)="onPaste($event)" 
+           />
+  </div>
+  <button mat-raised-button color="primary" (click)="submitCode()">Valider</button>
+</div>

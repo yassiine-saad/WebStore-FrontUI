@@ -1,0 +1,35 @@
+<!-- <div class="photo-uploader-container">
+    <h2>Gérer vos photos de produit</h2>
+    <div class="upload-area" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+      <input type="file" (change)="onFileSelected($event)" multiple>
+      <p>Glissez et déposez des fichiers ici, ou cliquez pour sélectionner des fichiers</p>
+    </div>
+    <div class="photos-grid">
+      <div *ngFor="let photo of photos; let i = index" class="photo-item">
+        <img [src]="photo.url" alt="Photo">
+        <button mat-icon-button color="warn" (click)="removePhoto(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+
+   <div class="photo-uploader-container">
+    <h2>Gérer vos photos de produit</h2>
+    <div class="upload-area" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+      <input type="file" (change)="onFileSelected($event)" multiple>
+      <p>Glissez et déposez des fichiers ici, ou cliquez pour sélectionner des fichiers</p>
+    </div>
+    <div class="photos-grid">
+      <div *ngFor="let photo of photos; let i = index" class="photo-item">
+        <img [src]="photo.url" alt="Photo">
+        <button mat-icon-button color="warn" (click)="removePhoto(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  
